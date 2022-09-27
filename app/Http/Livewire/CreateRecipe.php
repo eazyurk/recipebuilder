@@ -12,6 +12,7 @@ class CreateRecipe extends Component
     protected $listeners = ['addProductToRecipe'];
 
     public Collection $products;
+    public string $recipeTitle = '';
 
     public function mount(): void
     {
@@ -25,6 +26,10 @@ class CreateRecipe extends Component
 
     public function addProductToRecipe(Product $product)
     {
-        $this->products->add(['product' => $product, 'weight' => $product->nutrition->base_nutrient_value]);
+        $this->products->add([
+            'product' => $product,
+            'weight' => $product->nutrition->base_nutrient_value,
+            'measurement_code' => $product->nutrition->base_nutrient_measurement_code,
+        ]);
     }
 }

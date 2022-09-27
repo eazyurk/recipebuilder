@@ -59,7 +59,7 @@ class ProductSearch extends Component implements HasTable
                         ->suffix(fn(Product $record) => $record->nutrition->base_nutrient_measurement_code)
                         ->size('sm'),
                     TextColumn::make('nutrition.protein_value')
-                        ->prefix('proteine ')
+                        ->prefix('eiwitten ')
                         ->suffix(fn(Product $record) => $record->nutrition->base_nutrient_measurement_code)
                         ->size('sm'),
                     TextColumn::make('nutrition.salt_value')
