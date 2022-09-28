@@ -71,6 +71,11 @@ class ProductSearch extends Component implements HasTable
         ];
     }
 
+    protected function paginateTableQuery(Builder $query)
+    {
+        return $query->simplePaginate($this->getTableRecordsPerPage() == -1 ? $query->count() : $this->getTableRecordsPerPage());
+    }
+
     protected function getTableActions(): array
     {
         return [

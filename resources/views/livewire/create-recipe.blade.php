@@ -3,59 +3,60 @@
         <livewire:product-search/>
     </div>
     <div class="flex flex-col">
-        <div>
-            <input type="text"
-                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                   wire:model="recipeTitle"
-                   placeholder="Recept titel"/>
-        </div>
-        <!-- This example requires Tailwind CSS v2.0+ -->
-        <ul role="list" class="divide-y divide-gray-200">
-            @foreach($products as $key => $product)
-                <li class="flex py-4" wire:key="{{ $key }}">
-                    <div class="ml-3">
-                        <p class="text-sm font-medium text-gray-900">
-                            {{ $product['product']['title'] }}
-                        </p>
-                        <p class="text-sm text-gray-500">
-                            Per {{ $product['weight'] }} {{ $product['measurement_code'] }}
-                        <div class="grid grid-cols-2 gap-x-2">
-                            <div class="text-sm text-gray-500">
-                                kcal {{ $product['product']['nutrition']['kcal_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                vetten {{ $product['product']['nutrition']['fat_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                koolhydraten {{ $product['product']['nutrition']['carbohydrates_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                suikers {{ $product['product']['nutrition']['sugars_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                vezels {{ $product['product']['nutrition']['fiber_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                eiwitten {{ $product['product']['nutrition']['protein_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                zout {{ $product['product']['nutrition']['salt_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}
-                            </div>
-                        </div>
-                        </p>
-                    </div>
-                    <div class="ml-3">
-                        <div>
-                            <input type="number"
-                                   min="1"
-                                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                                   wire:model="products.{{ $key }}.weight"
-                                   placeholder="Gewicht ({{ $product['measurement_code'] }})"/>
-                        </div>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
+        <livewire:create-recipe-form />
+{{--        <div>--}}
+{{--            <input type="text"--}}
+{{--                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"--}}
+{{--                   wire:model="recipeTitle"--}}
+{{--                   placeholder="Recept titel"/>--}}
+{{--        </div>--}}
+{{--        <!-- This example requires Tailwind CSS v2.0+ -->--}}
+{{--        <ul role="list" class="divide-y divide-gray-200">--}}
+{{--            @foreach($products as $key => $product)--}}
+{{--                <li class="flex py-4" wire:key="{{ $key }}">--}}
+{{--                    <div class="ml-3">--}}
+{{--                        <p class="text-sm font-medium text-gray-900">--}}
+{{--                            {{ $product['product']['title'] }}--}}
+{{--                        </p>--}}
+{{--                        <p class="text-sm text-gray-500">--}}
+{{--                            Per {{ $product['weight'] }} {{ $product['measurement_code'] }}--}}
+{{--                        <div class="grid grid-cols-2 gap-x-2">--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                kcal {{ $product['product']['nutrition']['kcal_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}--}}
+{{--                            </div>--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                vetten {{ $product['product']['nutrition']['fat_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}--}}
+{{--                            </div>--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                koolhydraten {{ $product['product']['nutrition']['carbohydrates_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}--}}
+{{--                            </div>--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                suikers {{ $product['product']['nutrition']['sugars_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}--}}
+{{--                            </div>--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                vezels {{ $product['product']['nutrition']['fiber_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}--}}
+{{--                            </div>--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                eiwitten {{ $product['product']['nutrition']['protein_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}--}}
+{{--                            </div>--}}
+{{--                            <div class="text-sm text-gray-500">--}}
+{{--                                zout {{ $product['product']['nutrition']['salt_value'] / $product['product']['nutrition']['base_nutrient_value'] * $product['weight']}}{{ $product['measurement_code'] }}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="ml-3">--}}
+{{--                        <div>--}}
+{{--                            <input type="number"--}}
+{{--                                   min="1"--}}
+{{--                                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"--}}
+{{--                                   wire:model="products.{{ $key }}.weight"--}}
+{{--                                   placeholder="Gewicht ({{ $product['measurement_code'] }})"/>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
+{{--            @endforeach--}}
+{{--        </ul>--}}
     </div>
     @if ($products->isNotEmpty())
         <div>
