@@ -82,11 +82,6 @@ class ProductSearch extends Component implements HasTable
         ];
     }
 
-    protected function getTableRecordsPerPageSelectOptions(): array
-    {
-        return [10, 25, 50, 100];
-    }
-
     protected function getTableQuery(): Builder|Relation
     {
         return Product::query()->with('nutrition');

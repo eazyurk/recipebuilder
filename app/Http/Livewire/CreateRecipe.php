@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Actions\Recipe\SaveRecipe;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
@@ -22,6 +23,12 @@ class CreateRecipe extends Component
     public function render(): View
     {
         return view('livewire.create-recipe')->layout('layouts.guest');
+    }
+
+    public function saveRecipe()
+    {
+        $recipe = app(SaveRecipe::class)->execute($this->products, $this->recipeTitle);
+        $this->redirectRoute('recipe.show', ['slug' => $recipe->slug]);
     }
 
     public function addProductToRecipe(Product $product)

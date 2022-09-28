@@ -1,8 +1,8 @@
-<div class="min-h-screen flex">
-    <div class="w-80 pr-4">
+<div class="min-h-screen grid grid-cols-3 gap-4">
+    <div class="pr-4">
         <livewire:product-search/>
     </div>
-    <div class="py-6 flex flex-col">
+    <div class="flex flex-col">
         <div>
             <input type="text"
                    class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
@@ -58,7 +58,7 @@
         </ul>
     </div>
     @if ($products->isNotEmpty())
-        <div class="pt-6 pl-28">
+        <div>
             Voedingswaarden van dit recept
             (voor {{ $products->sum('weight') }} {{ $products->first()['measurement_code'] }})
 
@@ -134,7 +134,9 @@
                     </td>
                 </tr>
             </table>
-            <button class="mt-3 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button
+                wire:click="saveRecipe"
+                class="mt-3 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                 Recept opslaan
             </button>
         </div>

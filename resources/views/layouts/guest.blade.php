@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +16,20 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="min-h-screen">
-        <div class="font-sans text-gray-900 antialiased min-h-screen">
-            {{ $slot }}
+    <body class="h-full">
+        <div class="min-h-full">
+            @include('layouts.nav')
+
+            <div class="py-10">
+                <main>
+                    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                        {{ $slot }}
+                    </div>
+                </main>
+            </div>
         </div>
 
         @livewireScripts
     </body>
 </html>
+
