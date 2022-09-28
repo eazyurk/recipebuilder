@@ -5,7 +5,7 @@
     <div class="flex flex-col">
         <div>
             <input type="text"
-                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                    wire:model="recipeTitle"
                    placeholder="Recept titel"/>
         </div>
@@ -48,7 +48,7 @@
                         <div>
                             <input type="number"
                                    min="1"
-                                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                                    wire:model="products.{{ $key }}.weight"
                                    placeholder="Gewicht ({{ $product['measurement_code'] }})"/>
                         </div>
@@ -134,11 +134,9 @@
                     </td>
                 </tr>
             </table>
-            <button
-                wire:click="saveRecipe"
-                class="mt-3 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <x-buttons.button wire:click="saveRecipe" class="mt-3">
                 Recept opslaan
-            </button>
+            </x-buttons.button>
         </div>
     @endif
 </div>

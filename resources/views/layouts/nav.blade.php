@@ -4,9 +4,9 @@
             <div class="flex">
                 <div class="flex flex-shrink-0 items-center">
                     <img class="block h-8 w-auto lg:hidden"
-                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+                         src="https://tailwindui.com/img/logos/mark.svg?color=primary&shade=600" alt="Your Company">
                     <img class="hidden h-8 w-auto lg:block"
-                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+                         src="https://tailwindui.com/img/logos/mark.svg?color=primary&shade=600" alt="Your Company">
                 </div>
                 <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                     <x-menu.menu-item route="home" title="Home" />
@@ -25,7 +25,7 @@
             <div class="-mr-2 flex items-center sm:hidden" @click.prevent="showMenu = !showMenu">
                 <!-- Mobile menu button -->
                 <button type="button"
-                        class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                         aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!--
